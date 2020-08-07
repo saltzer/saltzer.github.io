@@ -29,7 +29,7 @@ body {
   font-size: 26px;
   font-weight: 300;
   text-shadow: 0 0 5px rgba(219, 14, 21, .8);
-  background: url(https://image.ibb.co/h2hLAJ/bg.png) #000;
+  background: url(bg.png) #000;
   position: relative;
   height: 100vh
 }
