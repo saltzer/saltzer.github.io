@@ -656,8 +656,8 @@ body.off::after {
 }
 
 .container.on>.screen {
-  -webkit-animation: turn-on 2s linear;
-  animation: turn-on 2s linear;
+  -webkit-animation: turn-on 1s linear;
+  animation: turn-on 1s linear;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards
 }
