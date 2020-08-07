@@ -12,7 +12,7 @@ class Fallout{
 	static defaults(){
 		return {
 			gibberish : ["█", "▓", "▒", "▒", "░", "░"],
-			duration : 1200,
+			duration : 950,
 		}
 	}
 
