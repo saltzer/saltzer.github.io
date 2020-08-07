@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden
+}
+
+* {
+	box-sizing: border-box;
+	}
+	
+html,
+body {
+	margin: 0;
+	padding: 0;
+	color: #ff0000;
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: justify;
+	background: url(https://image.ibb.co/h2hLAJ/bg.png) #000;
+	position: relative;
+}
+
+body::after {
+    content: " ";
+    display: block;
+    position: absolute;
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: rgba(49, 45, 45, .1);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-animation: flicker .15s infinite, steady 4s;
+    animation: flicker .15s infinite, steady 4s
+  }
+
+h1, h2, h3 h4, h5, h6 { 
+	font-weight: normal;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+a {
+	color: white;	
+	text-decoration: none;	
+}
+
+a:hover {
+	color: black;
+	background-color: white;
+}
+
+p { 
+	line-height: 100%;
+	margin: 0; 
+}
+	
+span { animation: blink 1s infinite }
+
+ul {
+	list-style: none;
+}
+
+ul a:before,
+p a:before {
+	color: #ff0000;
+	content: ' [';
+}
+
+ul a:after,
+p a:after {
+	color: #ff0000;
+	content: '] ';	
+}
+
+header.site {
+	margin: 0 0 40px 0;
+	text-transform: uppercase;
+}
+
+nav.site { 
+	margin: 0 0 40px 0;
+    width: 100%;
+}
+
+nav.site ul {
+	padding: 0;
+}
+
+nav.site ul li {
+	display: inline-block;
+	padding: 0 10px;
+	min-width: 120px;
+	width: auto;
+}
+
+.overlay {
+	height: 1px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+}
+
+.overlay:before {
+	background: linear-gradient(#101010 50%, rgba(16, 16, 16, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+	background-size: 100% 0px, 6px 100%;
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	z-index: 2;
+}
+	
+.overlay:after {
+	animation: flicker 4.0s infinite;
+	background: rgba(16, 16, 16, 0.2);
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	z-index: 2;
+}
+
+.col {
+	float: left;
+	padding: 0 60px;
+}
+
+.col.two { 
+	width: auto;
+}
+
+.source {
+	background: #ffffff; 
+	overflow: auto;
+	font-size: 10px;
+	width: auto;
+	border: gray;
+	border-width:.1em .1em .1em .8em;
+	padding:.2em .6em;
+	margin: 0; 
+	line-height: 125%;
+	color: #ffffff; 
+	font-weight: bold;
+	background-color: #000000
+}
+
+.wrapper {
+  animation: scroll 5s 1;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.content { 
+	animation: scroll 3s 1;
+    overflow: hidden;
+	padding: 20px; 
+	position: relative;
+	width: 100%;
+}
+
+#logo-v {
+	display: inline-block;
+	width: 55%;
+	clear: center;
+	position: relative;
+}
+
+img.pip-hero {
+	display: block;
+	float: left;
+	height: auto;
+	margin: 5px 10px 5px 0;
+	width: 120px;
+}
+
+form {}
+
+label {
+	clear: left;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding-top: 5px;
+}
+
+input[type=text],
+textarea {
+	background: transparent;
+	border: none;
+	color: #00dd00;
+	display: block;
+	float: left;
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 1.2em;
+	position: relative;
+	width: 80%;
+	z-index: 10
+}
+
+textarea {
+	margin-bottom: 20px
+	overflow: auto;
+	resize: none;
+}
+
+input[type=text]:focus,
+textarea:focus,
+input[type=submit]:focus,
+a.button:focus {
+	outline: 0;
+}
+
+input[type=submit],
+a.button {
+	background: transparent;
+	border: 1px solid #00dd00;
+	clear: both;
+	color: #00dd00;
+	cursor: hand;
+	display: inline-block;
+	font-family: 'Russo One', sans-serif;
+	font-size: 1em;
+	margin-bottom: 20px;
+	opacity: 0.25;
+	padding: 10px 100px;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	z-index: 10;
+}
+
+input[type=submit]:hover,
+a.button:hover {
+	background: #00dd00;
+	color: #383838;
+	opacity: 0.8;
+}
+
+.expandingArea { position: relative }
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.upper { text-transform: uppercase; }
+
+
+::selection {
+	background: #412929; /* Safari */
+	}
+	::-moz-selection {
+	background: #412929; /* Firefox */
+	}
+
