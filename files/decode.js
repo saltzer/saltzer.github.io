@@ -11,7 +11,7 @@ class Fallout{
 
 	static defaults(){
 		return {
-			gibberish : ["T", "M", "G", "I", "A", "K", "X"],
+			gibberish : ["*", "#", "?", "&", "@", "/", "%"],
 			duration : 950,
 		}
 	}
