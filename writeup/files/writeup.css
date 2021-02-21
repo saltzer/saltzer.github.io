@@ -13,6 +13,7 @@ body {
 	text-shadow: 0 0 5px #db0e15cc;
 	background: url(../files/bg.png) #000;
 	position: relative;
+	word-wrap: break-word;
   }
 
   body::after {
