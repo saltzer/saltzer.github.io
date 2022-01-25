@@ -460,7 +460,7 @@ main a:visited {
 .blog p {
   margin-top: 3px;
 }
-.blog p:nth-child(-n + 6) {
+.blog p:nth-child(-n + 10) {
   color: #6e7591;
 }
 
