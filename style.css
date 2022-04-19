@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: "Source Code Pro", mono;
+  font-weight: 400;
+  padding: 20px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+#generated_output{
+  margin:20px 0;
+  color: #33694e;
+}
+
+#links{
+  margin:20px 0;
+  padding: 20px 20px;
+}
+
+#loader {
+  margin:20px 0;
+}
+#loader-increment {
+  color: #15ec82;
+}
+.button {
+  display: inline-block; 
+  text-decoration:none;
+  text-align: center;
+  padding:12px 15px;
+  cursor:pointer;
+	transition: all 350ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	color: #fff;
+	box-shadow: #333 0 0px 0px 2px inset;
+}
+
+.button:hover {
+	color: #fff;
+	box-shadow: #15ec82 0 0 0 40px inset;
+}
+.button.reset:hover {
+	color: #fff;
+	box-shadow: #e6b864 0 0 0 40px inset;
+}
