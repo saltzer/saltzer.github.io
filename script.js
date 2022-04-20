@@ -1,70 +1,76 @@
-var input = [
-  "<br>[STACK] <br>MONITORING: ZABBIX GRAFANA ELK <br>CI/CD: GITLAB DOCKER KUBERNETES PORTAINER ANSIBLE-AWX JENKINS <br>VIRTUALIZATION: PROXMOX-VE PBS VSPHERE <br>LANGUAGES: PYTHON <br>DISTROS: DEBIAN UBUNTU ARCH CENTOS<br>",
-  "<br>[ERROR] VEhFUkUgS VMgTk8gVVNFRlVMI ElORk9STUFUSU9OIE hFUkU=<br>",
-  "<br>[INFOS] CHECK BUTTONS BELOW <br>",
+$(function() {
+
+  var quotes = [{
+    quote: 'Hi. My name is Anton. I studied at the System Administrator and computer systems technician in 2015. Now I am studying at the faculty of Software and Administration of Information Systems. The stack I worked with on my server:<br><br>Monitoring: Zabbix, Grafana, ELK;<br>CI/CD: Gitlab, Docker, Kubernetes, Ansible-AWX, Jenkins;<br>Virtualization: Proxmox-VE, PBS;<br>Languages: Python;<br>Distros: Debian, Ubuntu, Arch, Centos;',
+    author: 'github',
+    link: 'https://github.com/saltzer'
+  },
 ];
 
-var terminals = {};
-var startwords = [];
-var wordstats = {};
+  var i = 0;
+  var x = 0;
+  var result = [];
+  var $element = $('#quote');
+  var $tweet = $('#tweet-wrapper');
+  var htmlOutput;
+  (function() {
 
-for (var i = 0; i < input.length; i++) {
-    var words = input[i].split(' ');
-    terminals[words[words.length-1]] = true;
-    startwords.push(words[0]);
-    for (var j = 0; j < words.length - 1; j++) {
-        if (wordstats.hasOwnProperty(words[j])) {
-            wordstats[words[j]].push(words[j+1]);
-        } else {
-            wordstats[words[j]] = [words[j+1]];
-        }
+    var minNum = 0;
+    var maxNum = quotes.length;
+    var randomNum = 0;
+
+    while (result.length < maxNum) {
+      randomNum = Math.floor(Math.random() * (maxNum - minNum)) + minNum;
+      if (result.indexOf(randomNum) > -1) continue;
+      result.push(randomNum);
     }
-}
+  })();
 
-var choice = function (a) {
-    var i = Math.floor(a.length * Math.random());
-    return a[i];
-};
+  function output() {
+    if (x < quotes.length) {
+      var num = result[x];
 
-var make_line = function (min_length) {
-    word = choice(startwords);
-    var line = [word];
-    while (wordstats.hasOwnProperty(word)) {
-        var next_words = wordstats[word];
-        word = choice(next_words);
-        line.push(word);
-        if (line.length > min_length && terminals.hasOwnProperty(word)) break;
-    }
-    if (line.length < min_length) return make_line(min_length);
-    return line.join(' ');
-};
-var generate = function (){
-  var output =""
-    for(var i=0; i < 3; i++){
-      setTimeout( function timer(){
-        var newLine = make_line(0.00001 + Math.floor(0.00001 * Math.random())) + "<br>";       
-        $('#generated_output').append(newLine);
-       }, i*50 );
-    }
-}
-
-$('#generate').on('click', function () {
-    generate();
-});
-$('#clear').on('click', function () {
-    $('#generated_output').html("CLEARED...<br>user@arch ~><br>");
-});
-
-$(function() {
-  var increment ="";
-  for(let i=0; i < 51; i++){
-    setTimeout( function timer(){
-      increment += "#" 
-      $('#loader-increment').html(increment);
-      $('#percent').html(i * 2 + "%");
-      if (i==50){
-       generate(); 
+      if (quotes[num].link == '#') {
+        htmlOutput = '<p>' + quotes[num].quote + '</p>' + '<footer><a href="#" class="brackets author">' + quotes[num].author + '</a><span class="cursor blink">&#9646;</span></footer>';
+      } else {
+        htmlOutput = '<p>' + quotes[num].quote + '</p>' + '<footer><a href="' + quotes[num].link + '" target="_blank" class="brackets author">' + quotes[num].author + '</a><span class="cursor blink">&#9646;</span></footer>';
       }
-    }, i*10 ); 
-  }
+      $('#' + num).addClass('opened');
+    } else {
+      htmlOutput = '<div class="warning"><span>LOADING...</span></div>';
+    }
+    x++;
+    return render();
+  };
+
+  output();
+
+
+  var isTag, char, text;
+
+  function render() {
+
+    text = htmlOutput.slice(0, i++);
+
+    if (text === htmlOutput) return i = 0;
+
+    $element.html(text + '&#9646;');
+
+    char = text.slice(-1);
+
+    if (char === '<') isTag = true;
+    if (char === '>') isTag = false;
+
+    if (isTag) return render();
+
+    return setTimeout(render, 20);
+  };
+
+  $('#newQuoteBtn').on('click', function() {
+
+    output();
+
+  });
+
+
 });
