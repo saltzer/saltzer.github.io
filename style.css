@@ -171,7 +171,7 @@ body {
 }
 @media (min-width: 769px) {
   body {
-    background: #051D29 url("https://github.com/saltzer/saltzer.github.io/blob/master/back.png") repeat 300% 300%;
+    background: #051D29 url('https://saltzer.github.io/back.png') repeat 300% 300%;
     -webkit-animation: ScanLine 10s ease-in-out infinite;
     -moz-animation: ScanLine 10s ease-in-out infinite;
     animation: ScanLine 10s ease-in-out infinite;
