@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Main</title>
-  <link rel="stylesheet" href="style.css">
-
+<link href="https://fonts.googleapis.com/css?family=Black+Ops+One%7CSource+Code+Pro" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="loader">
-  saltzer@arch ~> sudo pacman -Syu<br>
-  :: Synchronizing package databases...<br>
-  :: Starting full system upgrade...<br>
-  core is up to date<br>
-  extra is up to date<br>
-  community is up to date<br>
-  multilib is up to date<br>
-  [<span id="loader-increment"></span>] <span id="percent">0%</span>
-</div>
-<div id="generated_output"></div>
-<div id="clear" class="button reset">CLEAR</div>
-<div id="generate" class="button">CHECK UPDATES</div>
-<a href="https://github.com/saltzer" class="button">GITHUB</a>
-<a href="https://t.me/saltzer" class="button">TELEGRAM</a><br>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-  <script src="script.js"></script><br>
-  <img src="https://www.codewars.com/users/Saltzer/badges/small"><br>
-  <script src="https://www.hackthebox.eu/badge/162958"></script>
+<div class="container">
+    <div class="wrapper quote-machine border blue">
+      <header class="border blue">
+        <h1>Saltzer</h1>
+        <span class="version border blue">ver:1.0</span>
+      </header>
+      <main class="border blue">
+
+        <blockquote id="quote"></blockquote>
+        <div class="block">
+          <a href="https://t.me/saltzer" id="newQuoteBtn" class="btn">TELEGRAM</a>
+          <a href="mailto:saltz.er26@gmail.com" id="newQuoteBtn" class="btn">SEND MAIL</a>
+          </span>
+        </div>
+      </main>
+    </div>
+    </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="script.js"></script>
 </body>
 </html>
