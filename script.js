@@ -1,7 +1,7 @@
 $(function() {
 
   var quotes = [{
-    quote: 'Hi. My name is Anton. I studied at the System Administrator and computer systems technician in 2015. Now I am studying at the faculty of Software and Administration of Information Systems. The stack I worked with:<br><br>Monitoring: Zabbix, Grafana, ELK;<br>CI/CD: Gitlab, Docker, Kubernetes, Ansible-AWX, Jenkins;<br>Virtualization: Proxmox-VE, PBS;<br>Languages: Python;<br>Distros: Debian, Ubuntu, Arch, Centos;',
+quote: 'Hi. My name is Anton. I studied at the System Administrator and computer systems technician in 2015. Now I am studying at the faculty of Software and Administration of Information Systems. The stack I worked with:<br><br>Monitoring: Zabbix, Grafana, Loki;<br>CI/CD: Gitlab, Docker, Kubernetes, Ansible-AWX;<br>Virtualization: Proxmox-VE, PBS;<br>Languages: Python;<br>Distros: Debian-like, Arch, Centos;',
     author: 'github',
     link: 'https://github.com/saltzer'
   },
